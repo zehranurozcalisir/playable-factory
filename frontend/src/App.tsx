@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 function App() {
     const isToken = checkAuth();
     const {pathname, search, hash} = window.location;
-    const showNavbar = pathname === "/home" ? true : false;
+    const showNavbar = pathname === "/home" || pathname === "/"  ? true : false;
     const isAuthenticated = Cookies.get('token');
     return (
         <>
