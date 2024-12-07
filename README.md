@@ -84,6 +84,7 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 - Depoyu Klonlayın.
   `git clone https://github.com/zehranurozcalisir/to-do-app.git`
   `cd to-do-app`
+  `npm install`
 
 - Frontend bağımlılıklarını yükleyin.
   `cd frontend`
