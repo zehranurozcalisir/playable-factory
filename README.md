@@ -82,8 +82,8 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 
 ## Kurulum
 - Depoyu Klonlayın.
-  `git clone https://github.com/zehranurozcalisir/playable-factory.git`
-  `cd playable-factory`
+  `git clone https://github.com/zehranurozcalisir/to-do-app.git`
+  `cd to-do-app`
 
 - Frontend bağımlılıklarını yükleyin.
   `cd frontend`
