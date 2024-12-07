@@ -111,7 +111,7 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 `cd backend`
 `node app.js`
 
-## Kullanım
+## Okunması Gerekenler
 1. Giriş yapın.
 2. Navbar'ın sağ köşesinde bulunan *Hesap* ikonunu kullanarak, kullanıcı ekleyebilir veya çıkış yapabilirsiniz.
 3. Ana sayfada todo'larınızı görüntüleyin.
