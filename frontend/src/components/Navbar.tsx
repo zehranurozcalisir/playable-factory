@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
-import {Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Tooltip} from "@mui/material";
+import React, {useEffect, useState} from 'react';
+import {Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Modal, Tooltip} from "@mui/material";
 import {Logout, PersonAdd, Settings} from "@mui/icons-material";
 import PersonIcon from '@mui/icons-material/Person';
+import UserAdd from "./UserAdd.tsx";
 
 interface State {
     userName: string;
@@ -27,6 +28,8 @@ const getCookie = (name: string) => {
 
 const Navbar: React.FC = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [openAddUser, setOpenAddUser] = useState(false);
+
     const open = Boolean(anchorEl);
     const [state, setState] = React.useState<State>({
         userName: "",
@@ -45,7 +48,16 @@ const Navbar: React.FC = () => {
         document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
         window.location.href = "/login";
     }
+    const handleOpenCloseUser = () => setOpenAddUser(false);
+    const handleOpenAddUser = ()=> {
 
+        setOpenAddUser(true);
+    }
+
+    const addUser = () => {
+        handleOpenAddUser();
+        handleClose();
+    }
     useEffect(() => {
         const token = getCookie('token');
 
@@ -62,6 +74,7 @@ const Navbar: React.FC = () => {
             }
         }
     }, []);
+
 
     return (
 
@@ -140,7 +153,7 @@ const Navbar: React.FC = () => {
                     </Box>
 
                     <Divider/>
-                    <MenuItem onClick={handleClose}>
+                    <MenuItem onClick={addUser}>
                         <ListItemIcon>
                             <PersonAdd fontSize="small"/>
                         </ListItemIcon>
@@ -153,6 +166,28 @@ const Navbar: React.FC = () => {
                         Çıkış Yap
                     </MenuItem>
                 </Menu></Box>
+
+            <Modal   open={openAddUser}
+                     onClose={handleOpenCloseUser}
+            >
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 4,
+                        borderRadius: 2,
+                        height:'30%',
+                        width: '20%',
+                    }}
+                >
+                    <UserAdd handleOpenCloseUser={handleOpenCloseUser}></UserAdd>
+                </Box>
+
+            </Modal>
         </Box>
 
     );

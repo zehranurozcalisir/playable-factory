@@ -2,6 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const dotenv = require("dotenv");
+const path = require('path');
+
 const port = 5000;
 const cors = require('cors');
 dotenv.config();
@@ -16,6 +18,7 @@ const connect = async () => {
         console.log(error);
     }
 }
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
 const loginRoute = require('./routes/authRoutes');
 const taskRoute = require('./routes/taskRoutes.js');
