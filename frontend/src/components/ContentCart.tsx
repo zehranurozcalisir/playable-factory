@@ -6,7 +6,6 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import axios from "axios";
 import Cookies from 'js-cookie';
 import OperationModal from "./OperationModal.tsx";
-import {State} from "@dnd-kit/core/dist/store";
 import InfoModal from "./infoModal.tsx";
 
 const ContentCart: React.FC<{ value: any , setStateHome:any, stateHome:any , stateValue:number }> = ({value,setStateHome ,stateHome,stateValue}) => {
@@ -15,12 +14,10 @@ const ContentCart: React.FC<{ value: any , setStateHome:any, stateHome:any , sta
 
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
-        return date.toLocaleString('tr-TR', {
+        return date.toLocaleDateString('tr-TR', {
+            day: '2-digit',
+            month: '2-digit',
             year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
         });
     };
     const handleCartClose = () => setOpenCartModal(false);
@@ -134,7 +131,7 @@ const ContentCart: React.FC<{ value: any , setStateHome:any, stateHome:any , sta
                         </Tooltip>
                     </Box>
                     <Box>
-                        <Tooltip title="Edit" onClick={() => handleCartOpen(1)}>
+                        <Tooltip title="Düzenle" onClick={() => handleCartOpen(1)}>
                             <EditNoteIcon sx={{color: '#4e4e4e'}}/>
                         </Tooltip>
                         <Tooltip title="Sil">

@@ -266,9 +266,9 @@ const OperationModal: React.FC<{
                         label={"Etiket"}
                         onChange={handleChange}
                     >
-                        <MenuItem value={"0"}>Yapılacak</MenuItem>
-                        <MenuItem value={"1"}>Bekleyen</MenuItem>
-                        <MenuItem value={"2"}>Tamamlandı</MenuItem>
+                        <MenuItem value={"0"}>Yapılacaklar</MenuItem>
+                        <MenuItem value={"1"}>Bekleyenler</MenuItem>
+                        <MenuItem value={"2"}>Tamamlananlar</MenuItem>
                     </Select>
                 </FormControl>
                 <Button

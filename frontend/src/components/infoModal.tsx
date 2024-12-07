@@ -1,28 +1,21 @@
 import React from 'react';
-import {Box, Card, Checkbox, Modal, Tooltip} from "@mui/material";
-import Navbar from "../components/Navbar.tsx";
-import InfoIcon from "@mui/icons-material/Info";
-import EditNoteIcon from "@mui/icons-material/EditNote";
-import DeleteIcon from "@mui/icons-material/Delete";
-import OperationModal from "./OperationModal.tsx";
+import {Box, Card} from "@mui/material";
 
-const InfoModal:  React.FC<{ value: any }> = ({value}) => {
+const InfoModal: React.FC<{ value: any }> = ({value}) => {
     const formatDate = (dateString: string) => {
         const date = new Date(dateString);
-        return date.toLocaleString('tr-TR', {
+        return date.toLocaleDateString('tr-TR', {
+            day: '2-digit',
+            month: '2-digit',
             year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
         });
     };
     return (
-        <Box sx={{width:'100%' , height:'100%'}}>
+        <Box sx={{width: '100%', height: '100%'}}>
             <Card sx={{
                 padding: '10px',
                 width: '100%',
-                height:'100%',
+                height: '100%',
                 boxSizing: 'border-box',
 
                 display: 'flex',
@@ -31,7 +24,7 @@ const InfoModal:  React.FC<{ value: any }> = ({value}) => {
                 marginBottom: '5px'
             }}>
                 <Box sx={{height: '100%', width: '40%', border: '1px dotted #4e4e4e', overflow: 'hidden'}}>
-                    <img src={value.image} style={{height: '100%', width:'100%'}}/>
+                    <img src={value.image} style={{height: '100%', width: '100%'}}/>
                 </Box>
                 <Box sx={{
                     height: '100%',

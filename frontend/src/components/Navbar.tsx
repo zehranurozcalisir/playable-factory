@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Avatar, Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Modal, Tooltip} from "@mui/material";
-import {Logout, PersonAdd, Settings} from "@mui/icons-material";
+import {Box, Divider, IconButton, ListItemIcon, Menu, MenuItem, Modal, Tooltip} from "@mui/material";
+import {Logout, PersonAdd} from "@mui/icons-material";
 import PersonIcon from '@mui/icons-material/Person';
 import UserAdd from "./UserAdd.tsx";
 
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
         window.location.href = "/login";
     }
     const handleOpenCloseUser = () => setOpenAddUser(false);
-    const handleOpenAddUser = ()=> {
+    const handleOpenAddUser = () => {
 
         setOpenAddUser(true);
     }
@@ -167,8 +167,8 @@ const Navbar: React.FC = () => {
                     </MenuItem>
                 </Menu></Box>
 
-            <Modal   open={openAddUser}
-                     onClose={handleOpenCloseUser}
+            <Modal open={openAddUser}
+                   onClose={handleOpenCloseUser}
             >
                 <Box
                     sx={{
@@ -180,7 +180,7 @@ const Navbar: React.FC = () => {
                         boxShadow: 24,
                         p: 4,
                         borderRadius: 2,
-                        height:'30%',
+                        height: '30%',
                         width: '20%',
                     }}
                 >

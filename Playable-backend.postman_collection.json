@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "c2ed0ca3-c55c-49d6-a158-846a920e3fad",
+		"name": "Playable-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31336725"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"tunahan\",\r\n  \"email\": \"tunahan@gmail.com\",\r\n  \"password\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"tunahan\",\r\n  \"password\": \"12345\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/auth/login"
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTIxNjdhMDdhNmNhYjkwYzlhMmRiNiIsInVzZXJuYW1lIjoiemVocmEiLCJlbWFpbCI6InplaHJhQGdtYWlsLmNvbSIsImlhdCI6MTczMzU2MTk4OCwiZXhwIjoxNzMzNTY1NTg4fQ.FwfLtfo2Po5uFNg4N01QXr7ZMd9nnv6pCgu-5dEZq1Q"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"infoMessage\": \"Bu bir test görevidir.\",\r\n    \"tagValue\": 1,\r\n    \"userId\": \"64f8f6c9d9b9a7313f8bc29c\",\r\n    \"fileName\": \"testfile.txt\",\r\n    \"imageName\": \"testimage.jpg\",\r\n    \"file\":null,\r\n    \"image\":null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:5000/api/tasks"
+			},
+			"response": []
+		},
+		{
+			"name": "task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTIxNjdhMDdhNmNhYjkwYzlhMmRiNiIsInVzZXJuYW1lIjoiemVocmEiLCJlbWFpbCI6InplaHJhQGdtYWlsLmNvbSIsImlhdCI6MTczMzQ3ODAwMiwiZXhwIjoxNzMzNDgxNjAyfQ.W0tdU0HTCzeH-3L14ielTG9RC-cNRBw35zESExRZYoM"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/tasks?perPage=1&page=1&infoMessage=test&tagValue=4&userId=sdfdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "perPage",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "infoMessage",
+							"value": "test"
+						},
+						{
+							"key": "tagValue",
+							"value": "4"
+						},
+						{
+							"key": "userId",
+							"value": "sdfdf"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTIxNjdhMDdhNmNhYjkwYzlhMmRiNiIsInVzZXJuYW1lIjoiemVocmEiLCJlbWFpbCI6InplaHJhQGdtYWlsLmNvbSIsImlhdCI6MTczMzU1NzY3OSwiZXhwIjoxNzMzNTYxMjc5fQ.BcB1KUPbvgrLczBj31Gj1GjQVsqkrActbTEeySB-gww"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/tasks/6753686a010d3ac32278299a"
+			},
+			"response": []
+		},
+		{
+			"name": "tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTIxNjdhMDdhNmNhYjkwYzlhMmRiNiIsInVzZXJuYW1lIjoiemVocmEiLCJlbWFpbCI6InplaHJhQGdtYWlsLmNvbSIsImlhdCI6MTczMzU1NzY3OSwiZXhwIjoxNzMzNTYxMjc5fQ.BcB1KUPbvgrLczBj31Gj1GjQVsqkrActbTEeySB-gww"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"url": "PUT http://localhost:5000/tasks/675409aa93838dfd6d5c0825"
+			},
+			"response": []
+		}
+	]
+}

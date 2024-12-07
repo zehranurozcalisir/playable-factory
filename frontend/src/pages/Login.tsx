@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Button, Card, IconButton, Snackbar, SnackbarCloseReason, TextField, Typography} from "@mui/material";
+import {Box, Button, Card, IconButton, Snackbar, SnackbarCloseReason, TextField} from "@mui/material";
 import LoginIcon from '@mui/icons-material/Login';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
@@ -92,7 +92,7 @@ const Login: React.FC = () => {
                     ...prevState,
                     responseMessage: response.data.message,
                 }));
-                window.location.href = '/';
+                window.location.href = '/home';
                 handleClick();
             }
         } catch (error: any) {
@@ -124,10 +124,10 @@ const Login: React.FC = () => {
                 flexDirection: 'column'
             }}>
 
-                <Typography sx={{color: '#113c5e', fontSize: '35px', margin: '10px'}}>Hoşgeldiniz :)</Typography>
+                <img src={'/img/logo.png'} alt='Logo' style={{height: '15vh'}}/>
 
                 <Box sx={{width: '100%', margin: '20px', boxSizing: 'border-box',}}>
-                    <TextField onChange={(e:any) => handleChange(e, 0)} sx={{width: '100%'}} id="outlined-basic"
+                    <TextField onChange={(e: any) => handleChange(e, 0)} sx={{width: '100%'}} id="outlined-basic"
                                label="Kullanıcı Adı" variant="outlined"/>
                 </Box>
 
@@ -137,7 +137,7 @@ const Login: React.FC = () => {
                         id="outlined-basic"
                         label="Şifre"
                         variant="outlined"
-                        onChange={(e:any) => handleChange(e, 1)}
+                        onChange={(e: any) => handleChange(e, 1)}
                         type={state.showPassword ? "text" : "password"}
 
                     />

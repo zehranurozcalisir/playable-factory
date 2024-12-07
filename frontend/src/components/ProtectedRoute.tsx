@@ -14,7 +14,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({isToken, option, childre
     }
 
     if (option === 1 && isToken) {
-        return <Navigate to="/"/>;
+        return <Navigate to="/home"/>;
     }
 
     return children;

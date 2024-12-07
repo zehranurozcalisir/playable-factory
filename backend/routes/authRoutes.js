@@ -30,17 +30,17 @@ router.post('/register', async (req, res) => {
 
 // LOGIN
 router.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const {username, password} = req.body;
 
     try {
-        const user = await User.findOne({ username });
+        const user = await User.findOne({username});
         if (!user) {
-            return res.status(404).json({ message: 'Kullanıcı bulunamadı.' });
+            return res.status(404).json({message: 'Kullanıcı bulunamadı.'});
         }
 
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(401).json({ message: 'Geçersiz şifre.' });
+            return res.status(401).json({message: 'Geçersiz şifre.'});
         }
 
         //Create Token
@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
                 email: user.email,
             },
             process.env.JWT_SECRET,
-            { expiresIn: '1h' }
+            {expiresIn: '1h'}
         );
 
         res.json({
@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
             token,
         });
     } catch (error) {
-        res.status(500).json({ message: 'Bir hata oluştu.', error });
+        res.status(500).json({message: 'Bir hata oluştu.', error});
     }
 });
 

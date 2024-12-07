@@ -143,13 +143,12 @@ router.delete('/tasks/:id', verifyToken, async (req, res) => {
         });
     }
 });
-router.put('/tasks/:id', verifyToken, upload.fields([{ name: 'file' }, { name: 'image' }]), async (req, res) => {
+router.put('/tasks/:id', verifyToken, upload.fields([{name: 'file'}, {name: 'image'}]), async (req, res) => {
     try {
-        const { id } = req.params;
-        const { infoMessage, tagValue, userId } = req.body;
+        const {id} = req.params;
+        const {infoMessage, tagValue, userId} = req.body;
         const baseUrl = "http://localhost:5000";
 
-        // Yeni dosya yolları
         const filePath = req.files['file']
             ? `${baseUrl}/public/${req.body.userId}/files/${req.files['file'][0].filename}`
             : null;
@@ -158,19 +157,17 @@ router.put('/tasks/:id', verifyToken, upload.fields([{ name: 'file' }, { name: '
             ? `${baseUrl}/public/${req.body.userId}/img/${req.files['image'][0].filename}`
             : null;
 
-        // Güncelleme nesnesi
         const updates = {
             infoMessage,
             tagValue,
             userId,
-            file: filePath || undefined, // Eğer yeni dosya yoksa, eski değer korunur
+            file: filePath || undefined,
             image: imagePath || undefined,
             fileName: req.files['file'] ? req.files['file'][0].originalname : undefined,
             imageName: req.files['image'] ? req.files['image'][0].originalname : undefined,
         };
 
-        // Görevi bul ve güncelle
-        const updatedTask = await Task.findByIdAndUpdate(id, updates, { new: true });
+        const updatedTask = await Task.findByIdAndUpdate(id, updates, {new: true});
 
         if (!updatedTask) {
             return res.status(404).json({
