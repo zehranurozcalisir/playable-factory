@@ -118,7 +118,7 @@ const Home: React.FC = () => {
             }
             const response = await axios.get('http://localhost:5000/api/tasks', {
                 headers: {
-                    Authorization: Bearer ${token},
+                    Authorization: `Bearer ${token}`,
                 },
                 params: {
                     perPage: value == 0 ? state.beDonePagination.perPage : value == 1 ? state.progressPagination.perPage : state.donePagination.perPage,
