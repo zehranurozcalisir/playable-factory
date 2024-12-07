@@ -5,6 +5,7 @@ import ContentBox from "../components/ContentBox.tsx";
 import CloseIcon from "@mui/icons-material/Close";
 import Cookies from 'js-cookie';
 import axios from "axios";
+import Navbar from '../components/Navbar';
 
 interface State {
     isSnackBar: boolean,
@@ -117,7 +118,7 @@ const Home: React.FC = () => {
             }
             const response = await axios.get('http://localhost:5000/api/tasks', {
                 headers: {
-                    Authorization: `Bearer ${token}`,
+                    Authorization: Bearer ${token},
                 },
                 params: {
                     perPage: value == 0 ? state.beDonePagination.perPage : value == 1 ? state.progressPagination.perPage : state.donePagination.perPage,
@@ -239,7 +240,9 @@ const Home: React.FC = () => {
     }, []);
 
     return (
-        <Box sx={{minHeight: "95vh", padding: '20px', boxSizing: 'border-box'}}>
+      <>
+      <Navbar/>
+      <Box sx={{minHeight: "95vh", padding: '20px', boxSizing: 'border-box'}}>
             <Filter fetchTasks={fetchTasks} stateHome={state} setStateHome={setState}/>
             {state.loading ?
                 <Box sx={{
@@ -289,6 +292,8 @@ const Home: React.FC = () => {
 
                 </>}
         </Box>
+      </>  
+        
     );
 };
 
