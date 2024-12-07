@@ -82,21 +82,21 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 
 ## Kurulum
 - Depoyu Klonlayın.
-  git clone https://github.com/zehranurozcalisir/playable-factory.git
-  cd playable-factory
+  `git clone https://github.com/zehranurozcalisir/playable-factory.git`
+  `cd playable-factory`
 
 - Frontend bağımlılıklarını yükleyin.
-  cd frontend
-  npm install
+  `cd frontend`
+  `npm install`
 
 - Backend bağımlılıklarını yükleyin.
-  cd backend
-  npm install
+  `cd backend`
+  `npm install`
 
 - Gerekli ortam değişkenlerini ayarlayın.
 - Backend klasörüne gidip .env dosyası oluşturun.
-  cd backend
-  touch .env
+  `cd backend`
+  `touch .env`
 - Sonrasında paylaştığım sample.env dosyasının içeriğini .env dosyasına kopyalayın.
 
 ## API Dokümantasyonu
@@ -104,12 +104,12 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 
 # Uygulamayı başlatın
 ## Frontend'i başlatın
-cd frontend
-npm start
+`cd frontend`
+`npm start`
 
 ## Backend'i başlatın (yeni bir terminal penceresinde)
-cd backend
-node app.js
+`cd backend`
+`node app.js`
 
 ## Kullanım
 1. Giriş yapın.
