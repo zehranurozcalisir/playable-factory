@@ -115,7 +115,7 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 
 ## Okunması Gerekenler
 1. Giriş yapın.
-2. **kullanıcı adı**:zehra  **şifre**: 1234
+2. **kullanıcı adı**: zehra  **şifre**: 1234
 3. Navbar'ın sağ köşesinde bulunan **Hesap** ikonunu kullanarak, kullanıcı ekleyebilir veya çıkış yapabilirsiniz.
 4. Ana sayfada todo'larınızı görüntüleyin.
 5. Metin bölümündeki alanı kullanarak istediğiniz içeriği filtreleyip bulabilirsiniz. Bu özelliği
