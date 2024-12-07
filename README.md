@@ -108,22 +108,24 @@ Bu proje, modern web teknolojileri kullanılarak geliştirilmiş bir todo (yapı
 `cd frontend`
 `npm start`
 
+
 ## Backend'i başlatın (yeni bir terminal penceresinde)
 `cd backend`
 `node app.js`
 
 ## Okunması Gerekenler
 1. Giriş yapın.
-2. Navbar'ın sağ köşesinde bulunan *Hesap* ikonunu kullanarak, kullanıcı ekleyebilir veya çıkış yapabilirsiniz.
-3. Ana sayfada todo'larınızı görüntüleyin.
-4. Metin bölümündeki alanı kullanarak istediğiniz içeriği filtreleyip bulabilirsiniz. Bu özelliği
+2. kullanıcı adı: zehra şifre: 1234
+3. Navbar'ın sağ köşesinde bulunan *Hesap* ikonunu kullanarak, kullanıcı ekleyebilir veya çıkış yapabilirsiniz.
+4. Ana sayfada todo'larınızı görüntüleyin.
+5. Metin bölümündeki alanı kullanarak istediğiniz içeriği filtreleyip bulabilirsiniz. Bu özelliği
    kullanabilmek için *Metin* alanına aramak istediğiniz metni yazıp, sonrasında *Filtrele* butonuna basabilirsiniz.
-5. Filtreleri sıfırlamak için, *Filtrele* butonu'nun solundaki *Temizle* butonunu kullanabilirsiniz.
-6. Sayfa'da 3 farklı etiket bulunmaktadır. Bunlar; *Yapılacaklar, **Bekleyenler, **Tamamlananlar*.
+6. Filtreleri sıfırlamak için, *Filtrele* butonu'nun solundaki *Temizle* butonunu kullanabilirsiniz.
+7. Sayfa'da 3 farklı etiket bulunmaktadır. Bunlar; *Yapılacaklar, **Bekleyenler, **Tamamlananlar*.
    Bu 3 farklı etiketi Metin arama kısmının sağ tarafından seçebilir ve istediğiniz etiketlerin todo'larını görüntüleyebilirsiniz.
    Etiketleri *pasif duruma* getirebilmek için istediğiniz etiketin butonuna tıklamanız yeterlidir.
-7. 1 Etiket bölümünde en fazla 3 task görebilirsiniz. Eğer 3'den fazla taskı eklediyseniz pagination kısmını kullanarak diğer taskları da görüntüleyebilirsiniz.
-8. Her task üzerinde işlem yapabilmek için ikonlar bulunuyor. Bu ikonların kullanımı şu şekildedir;
+8. 1 Etiket bölümünde en fazla 3 task görebilirsiniz. Eğer 3'den fazla taskı eklediyseniz pagination kısmını kullanarak diğer taskları da görüntüleyebilirsiniz.
+9. Her task üzerinde işlem yapabilmek için ikonlar bulunuyor. Bu ikonların kullanımı şu şekildedir;
 - i(info): Bu ikonu kullanarak task'ın içeriğini daha geniş ve detaylı bir biçimde görüntüleyebilirsiniz.
 - Sil(Trash): Bu ikonu kullanarak istediğiniz task'ı silebilirsiniz.
 - Düzenle(Edit): Bu ikonu kullanarak taskınızın bilgilerini ve etiketini düzenleyip, güncelleyebilirsiniz.
